@@ -71,6 +71,19 @@ div .icons{
 
 }
 
+.registro{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 60px;
+}
+
+.info{
+    flex: 1;
+    text-align: center;
+}
+
 h2{
     display: flex;
     justify-content: flex-start;
@@ -106,10 +119,45 @@ p{
 
 }
 
-div .form{
+.formulario{
     display:  flex;
-    justify-content: center;
-    background-color: rgb(250, 232, 228);
-    border-radius: 20%;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 50px;
+    flex-direction: column;
+    background-color: rgb(250, 232, 226);
+    border-radius: 20px;
+    width: 200px;
+}
+
+button{
+    color: white;
+    background-color: rgba(204, 65, 86, 1);
+    border: none;
     
+    border-radius: 20px;
+    padding: 10px;
+    
+}
+button:hover{
+    background-color: rgba(255, 99, 132, 1);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+
+}
+
+.formulario input{
+    padding: 10px;
+    border: 1px solid rgba(204, 65, 86, 1);
+    border-radius: 10px;
+    font-size: 1rem;
 }
