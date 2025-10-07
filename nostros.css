@@ -1,0 +1,253 @@
+/* FUENTES Y BASE  */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fffafc;
+  color: #5c3a3a;
+}
+
+
+header {
+  background-color: #ffe4ec;
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.logo img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ====== MENÚ ====== */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-family: 'Pacifico', cursive;
+  color: #000;
+  font-size: 22px;
+  transition: all 0.3s ease;
+  padding: 4px 8px; 
+  border-radius: 25px; 
+  background-color: transparent;
+  display: inline-block; 
+}
+
+.menu li a:hover {
+  background-color: #fff; /* fondo blanco */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-2px); /* leve efecto flotante */
+}
+
+.menu li a:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+
+.iconos img {
+  height: 40px;
+  margin-left: 15px;
+}
+
+
+.carrusel {
+  overflow: hidden;
+  width: 100%;
+  padding: 50px 0;
+  background: linear-gradient(180deg, #fff0f6 0%, #ffe4ec 100%);
+  position: relative;
+}
+
+.carrusel-inner {
+  display: flex;
+  gap: 40px;
+}
+
+.carrusel img {
+  flex: 0 0 auto;
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrusel img.active {
+  transform: scale(1.15);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+}
+
+/*SECCIÓN SOBRE NOSOTROS*/
+.sobre-nosotros {
+  background-color: #ffd1dc;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.sobre-nosotros h1 {
+  font-size: 42px;
+  color: #d94f8a;
+  margin-bottom: 20px;
+}
+
+.sobre-nosotros p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* SECCIONES DE MISIÓN Y VISIÓN */
+.mision,
+.vision {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 80px;
+  max-width: 1200px;
+  margin: 60px auto;
+  border-radius: 16px;
+  flex-wrap: nowrap;
+}
+
+.mision .texto {
+  flex: 1;
+  max-width: 600px;
+}
+
+.mision img {
+  flex: 1;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border: 2px solid #ffe4ec;
+}
+
+.vision {
+  flex-direction: row-reverse;
+}
+
+.vision .texto {
+  flex: 1;
+  max-width: 500px;
+}
+
+.vision img {
+  flex: 1;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border: 2px solid #ffe4ec;
+}
+
+/* TEXTOS Y TÍTULOS */
+.subtitulo {
+  font-size: 32px;
+  color: #d94f8a;
+  margin-bottom: 15px;
+}
+
+.mision p,
+.vision p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/*  RESPONSIVO */
+@media (max-width: 768px) {
+  .mision,
+  .vision {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .mision .texto,
+  .vision .texto {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .mision img,
+  .vision img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+}
+
+/*FOOTER */
+.footer-contacto {
+  background-color: #ffe4ec;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 18px;
+  color: #a83268;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  border-top: 2px solid #ffd1dc;
+}
+.contenedor-brunch {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.imagen-brunch {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.botbrunch {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d94f8a;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+.botbrunch:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  background-color: #c03e75;
+}
+
+
+
+.footer-contacto .icono-instagram {
+  height: 20px;
+  vertical-align: middle;
+  margin: 0 8px;
+}
+
