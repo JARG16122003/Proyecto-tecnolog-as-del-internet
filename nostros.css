@@ -48,9 +48,9 @@ header {
 }
 
 .menu li a:hover {
-  background-color: #fff; /* fondo blanco */
+  background-color: #fff; 
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transform: translateY(-2px); /* leve efecto flotante */
+  transform: translateY(-2px); 
 }
 
 .menu li a:active {
