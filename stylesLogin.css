@@ -103,7 +103,7 @@ h2{
 p{
     display: flex;
     justify-content: flex-start;
-    margin-left: 5vh;
+    margin-left: 18vh;
     text-align: center;
     margin-top: 10px;
     font-family: "Poppins", sans-serif;
@@ -116,7 +116,7 @@ p{
     justify-content: flex-start;
     align-items: center;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 90px;
 }
 
 .imagenPastel{
@@ -167,4 +167,31 @@ form{
     border-radius: 10px;
     font-size: 1rem;
 
+}
+
+.formulario a{
+
+
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    color: rgba(204, 65, 86, 1);
+    font-size: 0.9rem;
+    margin-top: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+
+    margin-bottom: 10px;
+}
+
+.formulario a:hover{
+    color: rgba(255, 99, 132, 1);
+    transition: all 0.3s ease;
+}
+
+.formulario .account{
+    font-weight: bold;
 }
