@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedisdos especiales</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">    
+<link rel="stylesheet" href="css/pedidosesp.css">
+
+
+</head>
+<body>
+    <header>
+        <!-- Menu -->
+        <nav class="navbar">
+            
+            
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Terolacakes" >
+                
+            </div>
+
+          
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="pedidos.html">Pedidos Especiales</a></li>
+                <li><a href="brunch.html">Brunch</a></li>
+            </ul>
+
+          
+            <div class="iconos">
+                <img src="img/carrito.png" alt="Carrito de compras">
+                <img src="img/usuario.png" alt="Cuenta del usuario">
+            </div>
+
+        </nav>
+
+    </header>
+ <main>
+    <h2>Formulario de Pedido Especial</h2>
+    <p>Por favor, complete el formulario y alguien de nuestro equipo se pondrá en contacto con 
+        usted en un plazo máximo de 24 horas.</p>
+    <form action="#" method="post" id="pedidoForm">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="celular">Número de celular:</label>
+        <input type="tel" id="celular" name="celular" required>
+
+        <label for="tipoEntrega">Tipo de entrega:</label>
+        <select id="tipoEntrega" name="tipoEntrega" required>
+            <option value="">Seleccione una opción</option>
+            <option value="tienda">Recoger en tienda</option>
+            <option value="domicilio">Entrega a domicilio</option>
+        </select>
+
+        <div id="direccionContainer" style="display:none;">
+            <label for="direccion">Dirección principal:</label>
+            <input type="text" id="direccion" name="direccion">
+
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad">
+
+            <label for="codigoPostal">Código postal:</label>
+            <input type="text" id="codigoPostal" name="codigoPostal">
+        </div>
+
+        <label for="fechaEntrega">Fecha de entrega:</label>
+        <input type="date" id="fechaEntrega" name="fechaEntrega" required>
+
+        <label for="detalles">Detalles del pedido especial:</label>
+        <textarea id="detalles" name="detalles" rows="4" placeholder="Sabores, cantidades, decoración especial..." required></textarea>
+
+        <button type="submit">Enviar pedido</button>
+    </form>
+</main>
+
+
+
+     <footer class="footer-contacto">
+  <div class="contacto-izquierda">
+    <p><strong>Contáctanos:</strong> 305 8884630 302 4928566</p>
+  </div>
+
+  <div class="contacto-derecha">
+    <img src="img/instagram.png" alt="Instagram" class="icono-instagram">
+    <p><strong>@Terolcakes</strong></p>
+  </div>
+</footer>
+
+
+   <script src="pedidosesp.js"></script>
+</body>
+</html>
