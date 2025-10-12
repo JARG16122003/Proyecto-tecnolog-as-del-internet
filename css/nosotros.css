@@ -302,7 +302,7 @@ header {
   transition: all 0.3s ease;
 }
 
-/* RESPONSIVO: mostrar hamburguesa y ocultar menú */
+/*  mostrar hamburguesa y ocultar menú */
 @media (max-width: 768px) {
   .menu {
     position: absolute;
@@ -342,7 +342,7 @@ header {
 
 /* ===== ANIMACIÓN DE LA X ===== */
 @media (max-width: 768px) {
-  /* Cuando el menú está activo */
+
   .menu-toggle:checked + .menu-icon span:nth-child(1) {
     transform: rotate(45deg) translateY(8px);
   }
