@@ -95,7 +95,7 @@ header {
   box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
 
-/* Animación infinita del carrusel */
+
 @keyframes moverCarrusel {
   from {
     transform: translateX(0);
@@ -106,7 +106,7 @@ header {
 }
 
 
-/*SECCIÓN SOBRE NOSOTROS*/
+
 .sobre-nosotros {
   background-color: #ffd1dc;
   padding: 60px 20px;
@@ -281,6 +281,80 @@ header {
 }
 
 
+/**/
+.menu-toggle {
+  display: none;
+}
+
+/* Icono hamburguesa */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.menu-icon span {
+  width: 30px;
+  height: 3px;
+  background-color: #d94f8a;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* RESPONSIVO: mostrar hamburguesa y ocultar menú */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background-color: #ffe4ec;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    z-index: 10;
+  }
+
+  .menu li a {
+    font-size: 20px;
+  }
+
+  .menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .navbar {
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .iconos {
+    margin-top: 10px;
+  }
+}
+
+/* ===== ANIMACIÓN DE LA X ===== */
+@media (max-width: 768px) {
+  /* Cuando el menú está activo */
+  .menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
 
 
 
