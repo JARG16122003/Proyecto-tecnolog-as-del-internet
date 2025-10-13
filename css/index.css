@@ -189,7 +189,37 @@ footer a{
 }
 
 @media (max-width: 768px) {
-    
+    .slides img{
+        width: 90vw;
+        height: 300px;
+    }
+
+    .container-2 div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-2 img{
+        width: 350px;
+    }
+
+    .contact-us{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .instagram{
+        justify-content: center;
+        align-items: center;
+    }
+    .instagram img{
+        width: 30px;
+        height: 30px;
+    }
+
+    footer{
+        padding: 30px 0 30px 0;
+    }
 }
 
 
