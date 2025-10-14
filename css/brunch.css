@@ -1,0 +1,212 @@
+/* Reset básico */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Fuentes y variables de color para mantener consistencia */
+:root{
+  --accent: #b882ff;    /* borde de imagen */
+  --header-bg: #ffd3bb; /* header */
+  --btn-bg: #c94b54;    /* botón principal */
+  --btn-bg-dark: #a83742;
+  --text: #111;
+  --muted: #555;
+  --max-width: 1200px;
+}
+
+/* Página */
+body{
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height: 1.5;
+}
+
+/* ===== HEADER ===== */
+.site-header{
+  background: var(--header-bg);
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* Logo */
+.logo{
+  height: 68px; /* intenta mantener proporción con la imagen original */
+  display: block;
+  object-fit: contain;
+}
+
+/* Nav (desktop) */
+.main-nav{
+  display: flex;
+  gap: 34px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-item{
+  text-decoration: none;
+  font-family: "Pacifico", cursive;
+  color: #000;
+  font-size: 1.2rem;
+  padding: 8px 18px;
+  border-radius: 28px;
+  transition: background .15s, color .15s;
+}
+
+.nav-item.active{
+  background: #f4f4f4;
+}
+
+/* Header icons */
+.header-icons{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.icon-btn{
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* Menu toggle (mobile) - hidden on desktop */
+.menu-toggle{
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ===== HERO / CONTENIDO PRINCIPAL ===== */
+.hero{
+  padding: 44px 16px;
+}
+
+.container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Imagen: caja con borde grueso morado */
+.image-frame{
+  flex: 1;
+  min-width: 320px;
+  max-width: 560px;
+  border: 6px solid var(--accent);
+  padding: 10px;
+  border-radius: 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: #fff;
+}
+
+/* La imagen ocupa todo el ancho interior */
+.hero-image{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Texto y botón */
+.content{
+  flex: 1;
+  min-width: 300px;
+  max-width: 640px;
+}
+
+.title{
+  font-size: 3rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.lead{
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+.content p{
+  margin-bottom: 12px;
+  color: var(--muted);
+  text-align: justify;
+}
+
+/* CTA */
+.cta{
+  display: inline-block;
+  margin-top: 14px;
+  background: var(--btn-bg);
+  color: #fff;
+  border: none;
+  padding: 14px 36px;
+  font-weight: 700;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: background .15s, transform .12s;
+}
+
+.cta:hover{ background: var(--btn-bg-dark); transform: translateY(-2px); }
+
+/* ===== RESPONSIVE (exact layout kept on large screens; stacks in mobile) ===== */
+
+/* Tablet / small desktop breakpoint */
+@media (max-width: 1000px){
+  .container{ gap: 26px; padding: 0 18px; }
+  .title{ font-size: 2.4rem; }
+  .logo{ height: 58px; }
+}
+
+/* Mobile: apilar y mostrar botón menú */
+@media (max-width: 700px){
+  .header-inner{ align-items: center; gap: 10px; }
+  .main-nav{ display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--header-bg); flex-direction: column; padding: 12px 20px; gap: 10px; z-index: 50; border-bottom: 1px solid rgba(0,0,0,0.04); }
+  .main-nav.open{ display:flex; }
+
+  .menu-toggle{ display: block; }
+
+  /* El header se reduce */
+  .logo{ height: 50px; }
+
+  /* Stacking hero */
+  .container{ flex-direction: column-reverse; gap: 20px; padding: 0 16px; }
+  .image-frame{ width: 100%; max-width: 520px; }
+  .title{ font-size: 2.1rem; text-align: center; }
+  .content p, .lead{ font-size: 0.97rem; text-align: justify; }
+
+  .cta{ width: 100%; padding: 12px 16px; font-size: 1.05rem; border-radius: 32px; }
+}
+
+/* Pequeños ajustes para pantallas muy pequeñas */
+@media (max-width: 380px){
+  .title{ font-size: 1.9rem; }
+  .logo{ height: 44px; }
+  .image-frame{ border-width: 5px; padding: 8px; }
+}
