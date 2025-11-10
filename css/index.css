@@ -51,8 +51,15 @@ nav a:hover{
   background-color: #ffff;
   transition: all 0.3s ease;
   color: #000;
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-2px); 
+}
+
+.nav a:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .material-symbols-outlined {
@@ -234,18 +241,7 @@ footer a {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  nav a {
-    font-family: "Pacifico", cursive;
-    font-size: 1.5rem;
-    color: black;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 2px;
-    transition: all 0.3s ease;
-  }
-
-  nav a:hover {
-    border-bottom: 2px solid black;
-  }
+  
 
   /* Icono animado (hamburguesa -> X) */
   #menu-toggle:checked + .menu-icon span:nth-child(1) {
