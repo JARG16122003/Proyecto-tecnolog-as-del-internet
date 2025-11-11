@@ -302,7 +302,7 @@ header {
 .menu-icon span {
   width: 30px;
   height: 3px;
-  background-color: #d94f8a;
+  background-color: #000;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -314,7 +314,7 @@ header {
     top: 100px;
     left: 0;
     right: 0;
-    background-color: #ffe4ec;
+    background-color: rgba(255, 216, 190, 1);
     flex-direction: column;
     align-items: center;
     gap: 20px;
