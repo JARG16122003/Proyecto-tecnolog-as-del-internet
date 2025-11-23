@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Firebase Admin
-const serviceAccount = require("./serviceAccountKey.json");
+const serviceAccount = require("./secret/serviceAccountKey.json");
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
