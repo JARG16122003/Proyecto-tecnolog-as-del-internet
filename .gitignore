@@ -1,0 +1,11 @@
+# Ignorar cualquier archivo llamado serviceAccountKey.json en cualquier carpeta
+**/serviceAccountKey.json
+
+# Carpeta opcional para claves
+backend/secret/
+
+# No subir archivos .env
+.env
+
+# Node Modules
+node_modules/
