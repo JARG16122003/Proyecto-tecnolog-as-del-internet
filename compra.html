@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pagos</title>
+    <link rel = "stylesheet" href = "css/compra.css">
+</head>
+<body>
+    <header>
+        <!-- Menu -->
+        <nav class="navbar">
+            
+            
+            <div class="logo">
+                <a href="inicio.html">
+                <img src="img/logo.png" alt="Logo Terolacakes" >
+                </a>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+
+          
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="pedido.html">Pedidos Especiales</a></li>
+                <li><a href="brunch.html">Brunch</a></li>
+            </ul>
+
+          
+            <div class="iconos">
+                <img src="img/carrito.png" alt="Carrito de compras">
+                <a href="login.html"><img src="img/usuario.png" alt="Cuenta del usuario"></a>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <div class = "resumen">
+        <h1>Resumen de compra</h1>
+        <div class="detalleCompra" id = "detalleCompra">    
+        </div>
+
+    </div>
+    
+
+    <h2 class="medioPago">Escoge el medio de pago a utilizar</h2>
+    <div class="opciones">
+        <div class="QR" id = "cardNequi">
+            <h2>Pago con QR Nequi</h2>
+            <div class = "imagen">
+                <img id = "imgNequi" class= "Referencia" src="img/nequi.jpg">
+            </div>
+            <button class="seleccionar" onclick="mostrarQR">Seleccionar</button>
+        </div>
+        <div class = "contraenrega">
+            <h2>Pago ContraEntrega</h2>
+            <div class="imagenC">
+                <img class = "RefereciaC" src="img/contraEntrega.jpg">
+            </div>
+            <button class="seleccionar">Seleccionar</button>
+        </div>
+    </div>
+    <div class="completar">
+        <button class="pedido">Completar</button>
+    </div>
+    
+    <script src = "frontjs/compra.js"></script>
+</body>
+</html>

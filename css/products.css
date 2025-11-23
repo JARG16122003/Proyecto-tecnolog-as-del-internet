@@ -1,6 +1,8 @@
+/* ---------- RESET ---------- */
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -46,23 +48,17 @@ nav a {
   font-family: "Pacifico", cursive;
   color: black;
   font-size: 1.3rem;
+  transition: all 0.3s ease;
 }
 
-nav a:hover{
+nav a:hover {
   background-color: #ffff;
-  transition: all 0.3s ease;
   color: #000;
   border-radius: 25px;
   padding: 5px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transform: translateY(-2px); 
 }
-
-.nav a:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0;
@@ -75,7 +71,6 @@ nav a:hover{
 .material-symbols-outlined:hover {
   color: rgb(255, 255, 255);
   transform: scale(1.1);
-  user-select: none;
 }
 
 div .icons {
@@ -85,10 +80,6 @@ div .icons {
   gap: 20px;
   margin-right: 20px;
   margin-top: 10px;
-}
-
-span {
-  margin: 10px;
 }
 
 /* ---------- MENÚ HAMBURGUESA ---------- */
@@ -112,11 +103,13 @@ span {
   transition: all 0.3s ease;
 }
 
-/* Contenedor general */
+/* ---------- CONTENEDOR Y GRID ---------- */
 .container {
-  display: flex;
-  min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    width: 100vw; /* ocupar todo el ancho de la ventana */
+    box-sizing: border-box;
 }
 
 /* Barra lateral */
@@ -160,58 +153,136 @@ span {
   background-color: #005f5e;
 }
 
+/* Contenedor de tarjetas */
 .container-2 {
-  margin: 180px 0 180px 180px; /* espacio para el aside fijo */
-  padding: 30px;
-  display: flex;
-  justify-content: space-between;
+    margin: 180px 20px 180px 180px; /* ajustar espacio lateral */
+    padding: 30px;
+    flex: 1; /* ocupar el resto del espacio horizontal */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+/* ---------- TARJETA CON FLIP ---------- */
+.card {
+  perspective: 1200px;
+  width: 100%;
+  height: 450px;
+  position: relative;
+  cursor: pointer;
 }
 
-
-
-
-/* Carta individual */
-.card {
-  border: 1px solid #eee;
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 15px;
   background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s;
-  margin: 0 15px 0 15px;
 }
 
-.card:hover {
-  transform: scale(1.02);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 15px;
-  height: 200px;
+.card-front img {
+  width: 90%;
+  height: 220px;
   object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 10px;
 }
 
-.card .price {
-  font-weight: bold;
+.card-front h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.card-front .price {
   font-size: 1.2rem;
-  margin: 5px 0;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.add-btn {
-  background: none;
-  border: 2px solid #f3b0a8;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.add-btn:hover {
-  background: #f3b0a8;
+.card-front .add-btn {
+  margin-top: auto;
+  background-color: #f3b0a8;
   color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.card-front .add-btn:hover {
+  background-color: #f2857d;
+  transform: scale(1.05);
+}
+
+/* Back side */
+.card-back {
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+.card-back h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-back p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.card-back .options label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+/* Botones back side */
+.card-back .add-cart-btn,
+.card-back .back-btn {
+  width: 90%;
+  padding: 12px 0;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.card-back .add-cart-btn {
+  background-color: #f3b0a8;
+  color: white;
+}
+
+.card-back .add-cart-btn:hover {
+  background-color: #f2857d;
+  transform: scale(1.05);
+}
+
+.card-back .back-btn {
+  background-color: #eee;
+  color: #333;
+}
+
+.card-back .back-btn:hover {
+  background-color: #ddd;
+  transform: scale(1.03);
+}
+
+/* Flip */
+.card.flipped .card-front {
+  transform: rotateY(180deg);
+}
+
+.card.flipped .card-back {
+  transform: rotateY(0deg);
 }
 
 /* ---------- FOOTER ---------- */
@@ -246,13 +317,14 @@ footer a {
   text-decoration: none;
 }
 
-@media (max-width: 768px){
-    .menu-icon {
+
+
+@media (max-width: 768px) {
+  .menu-icon {
     display: flex;
     padding-left: 60px;
   }
 
-  /* Ocultar nav inicialmente */
   nav {
     display: none;
     position: absolute;
@@ -269,25 +341,11 @@ footer a {
     animation: fadeIn 0.4s ease;
   }
 
-  @keyframes fadeIn {
+   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  nav a {
-    font-family: "Pacifico", cursive;
-    font-size: 1.5rem;
-    color: black;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 2px;
-    transition: all 0.3s ease;
-  }
-
-  nav a:hover {
-    border-bottom: 2px solid black;
-  }
-
-  /* Icono animado (hamburguesa -> X) */
   #menu-toggle:checked + .menu-icon span:nth-child(1) {
     transform: rotate(45deg) translateY(32px);
     margin-left: 50px;
@@ -307,36 +365,18 @@ footer a {
     display: flex;
   }
 
-  header {
-    justify-content: space-between;
-    padding: 20px 20px ;
+  .container-2 {
+    margin-left: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 20px;
   }
 
-  .icons {
-    margin-top: 0;
-    padding: 20px;
+  .card {
+    height: 420px;
   }
 
   aside{
     opacity: 0;
-  }
-
-  .container-2{
-    margin: auto;
-  }
-
-  .contact-us {
-    flex-direction: column;
-  }
-
-  .instagram {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .instagram img {
-    width: 30px;
-    height: 30px;
   }
 
   footer {

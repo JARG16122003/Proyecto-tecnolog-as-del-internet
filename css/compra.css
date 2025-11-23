@@ -1,0 +1,139 @@
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(254, 246, 240, 1);
+  color: #000;
+}
+
+
+header {
+  background-color: rgba(255, 216, 190, 1);
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.logo img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-family: 'Pacifico', cursive;
+  color: #000;
+  font-size: 22px;
+  transition: all 0.3s ease;
+  padding: 4px 8px; 
+  border-radius: 25px; 
+  background-color: transparent;
+  display: inline-block; 
+}
+
+.menu li a:hover {
+  background-color: #fff; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-2px); 
+}
+
+.menu li a:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+
+.iconos img {
+  height: 40px;
+  margin-left: 15px;
+}
+
+
+.resumen{
+    background-color: white;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 80%;
+}
+
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 50px; 
+    margin: 40px 0;
+    flex-wrap: wrap; 
+}
+
+.QR, .contraenrega {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 400px;
+    height: 400px; 
+}
+
+.QR:hover{
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+.contraenrega:hover{
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.QR img, .contraenrega img {
+    width: 300px; 
+    height: auto; 
+    margin-top: 15px;
+    border-radius: 10px; 
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffb88c;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.completar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
