@@ -3,12 +3,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const tipoEntrega = document.getElementById("tipoEntrega");
     const direccionContainer = document.getElementById("direccionContainer");
 
+    // Mostrar u ocultar campos de dirección según tipo de entrega
     tipoEntrega.addEventListener("change", () => {
         direccionContainer.style.display = tipoEntrega.value === "domicilio" ? "block" : "none";
     });
 
+    // Definir la URL base según entorno (local o producción)
+    const BASE_URL = window.location.hostname.includes("localhost")
+        ? "http://localhost:3000"
+        : "https://proyecto-tecnolog-as-del-internet.onrender.com";
+
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
+
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Debes iniciar sesión para enviar un pedido");
+            return;
+        }
 
         const pedido = {
             nombre: form.nombre.value,
@@ -23,9 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         try {
-            const response = await fetch("/api/pedidosEspeciales", {
+            const response = await fetch(`${BASE_URL}/api/pedidosEspeciales`, {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}` // enviar token para validar usuario
+                },
                 body: JSON.stringify(pedido)
             });
 
@@ -36,10 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 form.reset();
                 direccionContainer.style.display = "none";
             } else {
-                alert(`Error al enviar pedido: ${data.mensaje}`);
+                alert(`Error al enviar pedido: ${data.mensaje || "Inténtalo de nuevo"}`);
             }
         } catch (error) {
-            console.error("Error:", error);
+            console.error("Error enviando pedido:", error);
             alert("Ocurrió un error al enviar el pedido.");
         }
     });

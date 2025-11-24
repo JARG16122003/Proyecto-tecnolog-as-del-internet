@@ -2,10 +2,15 @@ const contenedor = document.querySelector(".container-2");
 const botones = document.querySelectorAll(".sidebar button");
 let productos = [];
 
+// 🔹 URL base según entorno
+const BASE_URL = window.location.hostname.includes("localhost")
+    ? "http://localhost:3000"
+    : "https://proyecto-tecnolog-as-del-internet.onrender.com";
+
 // 🔹 1. Cargar productos desde backend
 async function cargarProductos() {
   try {
-    const response = await fetch("http://localhost:3000/api/productos");
+    const response = await fetch(`${BASE_URL}/api/productos`);
     productos = await response.json();
     mostrarProductos(productos);
   } catch (error) {
@@ -27,18 +32,20 @@ async function agregarProductoAlCarrito(producto, token) {
       carrito.push(producto);
     }
 
-    // Guardar carrito actualizado
+    // Guardar carrito actualizado en localStorage
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
-    // También puedes enviar al backend si quieres persistencia
-    await fetch("http://localhost:3000/api/carrito", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      },
-      body: JSON.stringify(producto)
-    });
+    // Enviar al backend para persistencia
+    if (token) {
+      await fetch(`${BASE_URL}/api/carrito`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
+        body: JSON.stringify(producto)
+      });
+    }
 
     alert(`Producto agregado al carrito ✔ (${producto.cantidad} unidad(es))`);
   } catch (err) {

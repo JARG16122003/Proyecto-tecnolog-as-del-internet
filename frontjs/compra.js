@@ -9,13 +9,18 @@ document.getElementById("cardNequi").addEventListener("click", function() {
 
 const detalleCompra = document.getElementById("detalleCompra");
 
+// Definir URL base según entorno
+const BASE_URL = window.location.hostname.includes("localhost")
+    ? "http://localhost:3000"
+    : "https://proyecto-tecnolog-as-del-internet.onrender.com";
 
+// Obtener carrito del backend
 async function obtenerCarrito() {
     const token = localStorage.getItem("token");
     if (!token) return [];
 
     try {
-        const res = await fetch("http://localhost:3000/api/carrito", {
+        const res = await fetch(`${BASE_URL}/api/carrito`, {
             headers: { "Authorization": `Bearer ${token}` }
         });
         const data = await res.json();
@@ -26,6 +31,7 @@ async function obtenerCarrito() {
     }
 }
 
+// Renderizar resumen de compra
 async function renderResumen() {
     const productos = await obtenerCarrito();
     detalleCompra.innerHTML = "";
@@ -50,5 +56,5 @@ async function renderResumen() {
     `;
 }
 
-
+// Inicializar resumen
 renderResumen();
