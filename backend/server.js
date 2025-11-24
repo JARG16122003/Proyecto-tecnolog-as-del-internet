@@ -12,9 +12,11 @@ app.use(cors());
 app.use(express.json());
 
 // Firebase Admin
-const serviceAccount = require("./secret/serviceAccountKey.json");
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://terola-55d76-default-rtdb.firebaseio.com" // tu URL de Firebase
 });
 
 // 🔹 Rutas API
