@@ -212,8 +212,8 @@ footer {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  padding: 60px 0;
   position: fixed;
-  z-index: 2;
 }
 
 footer div {

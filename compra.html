@@ -4,43 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pagos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel = "stylesheet" href = "css/compra.css">
 </head>
 <body>
     <header>
-        <!-- Menu -->
-        <nav class="navbar">
-            
-            
-            <div class="logo">
-                <a href="inicio.html">
-                <img src="img/logo.png" alt="Logo Terolacakes" >
-                </a>
-            </div>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
+       <div class="logo">
+            <img class="logo" src="img/logoTerolaCakes.png" alt="logo terolacakes">
+        </div>
 
-
-          
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="products.html">Productos</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="pedido.html">Pedidos Especiales</a></li>
-                <li><a href="brunch.html">Brunch</a></li>
-            </ul>
-
-          
-            <div class="iconos">
-                <img src="img/carrito.png" alt="Carrito de compras">
-                <a href="login.html"><img src="img/usuario.png" alt="Cuenta del usuario"></a>
-            </div>
-
+        <input type="checkbox" class="menu-toggle" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="products.html">Productos</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="pedido.html">Pedidos especiales</a>
+            <a href="brunch.html">Brunch</a>
         </nav>
+
+        <div class="icons">
+            <a href="carrito.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+            <a href="login.html"><span class="material-symbols-outlined">account_circle</span></a>
+        </div>
 
     </header>
 
@@ -73,6 +65,18 @@
     <div class="completar">
         <button class="pedido">Completar</button>
     </div>
+
+    <footer class="footer">
+        <div class="contact-us">
+            <p>Contactanos:</p>
+            <p>305 8884630</p>
+            <p>302 4928566</p>
+        </div>
+        <div class="instagram">
+            <img src="./img/ig.jpg" alt="instagram">
+            <a href="https://www.instagram.com/terolacakes?igsh=OHgwd3c1MTliaHBl">@TerolaCakes</a>
+        </div>
+    </footer>
     
     <script src = "frontjs/compra.js"></script>
 </body>
